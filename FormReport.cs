@@ -130,50 +130,70 @@ MessageBoxIcon.Error);
       dataGridViewSave.Sort(dataGridViewSave.Columns[2], ListSortDirection.Ascending);
     }
 
-    private void buttonAdd_Click(object sender, EventArgs e)
-    {
-      object[] items = new object[dataGridView.ColumnCount];
-      for (int i = 0; i < dataGridView.RowCount-1; i++)
-      {
-        
-         if ((dataGridView.Rows[i].Cells[1].Value.ToString() == textBoxFIO.Text)
-        ||( dataGridView.Rows[i].Cells[2].Value.ToString() == textBoxNapravlenie.Text) 
-        || (dataGridView.Rows[i].Cells[3].Value.ToString() == textBoxNumber.Text)
-        || (dataGridView.Rows[i].Cells[4].Value.ToString() == textBoxKurs.Text))
+    private void buttonAdd_Click(object sender, EventArgs e)//добавляем студентов в таблицу
         {
+           
+                object[] items = new object[dataGridView.ColumnCount];
+                for (int i = 0; i < dataGridView.RowCount - 1; i++)
+                {
 
-          for (int z = 0; z < dataGridView.ColumnCount; z++)
+                    if ((dataGridView.Rows[i].Cells[1].Value.ToString() == textBoxFIO.Text) //если совпадают имя, направление , номер или курс
+                   || (dataGridView.Rows[i].Cells[2].Value.ToString() == textBoxNapravlenie.Text)
+                   || (dataGridView.Rows[i].Cells[3].Value.ToString() == textBoxNumber.Text)
+                   || (dataGridView.Rows[i].Cells[4].Value.ToString() == textBoxKurs.Text))
+                    {
+
+                        for (int z = 0; z < dataGridView.ColumnCount; z++)
+                        {
+                            items[z] = dataGridView.Rows[i].Cells[z].Value;
+                        }
+
+                        dataGridViewSave.Rows.Add(new object[] { items[1], items[2], items[3], items[4] });//добавляем строку с совпавшим элементом
+
+                    }
+                }
+
+            RemoveDuplicate();
+            
+            
+
+        }
+        private void RemoveDuplicate()
+        {
+            for (int currentRow = 0; currentRow < dataGridViewSave.Rows.Count - 1; currentRow++)
             {
-              items[z] = dataGridView.Rows[i].Cells[z].Value;
+                DataGridViewRow rowToCompare = dataGridViewSave.Rows[currentRow];
+
+                for (int otherRow = currentRow + 1; otherRow < dataGridViewSave.Rows.Count; otherRow++)
+                {
+                    DataGridViewRow row = dataGridViewSave.Rows[otherRow];
+
+                    bool duplicateRow = true;
+
+                    for (int cellIndex = 0; cellIndex < row.Cells.Count; cellIndex++)
+                    {
+                        if (!rowToCompare.Cells[cellIndex].Value.Equals(row.Cells[cellIndex].Value))
+                        {
+                            duplicateRow = false;
+                            break;
+                        }
+                    }
+
+                    if (duplicateRow)
+                    {
+                        dataGridViewSave.Rows.Remove(row);
+                        otherRow--;
+                    }
+                }
             }
-
-            dataGridViewSave.Rows.Add(new object[] { "", items[1], items[2], items[3], items[4] });
-
         }
-      }
-      for (int i = 0; i < dataGridViewSave.RowCount - 1; i++)
-      {
-
-
-        for (int z = i + 1; z < dataGridViewSave.ColumnCount; z++)
-        {
-          if (dataGridViewSave.Rows[z] == dataGridViewSave.Rows[i])
-          {
-            dataGridViewSave.Rows.RemoveAt(z);
-            z--;
-          }
-        }
-      }
-        
-    }
-
-          private void buttonRemove_Click(object sender, EventArgs e)
+        private void buttonRemove_Click(object sender, EventArgs e)
     {
           for (int i = dataGridViewSave.RowCount - 2; i >=0; i--)
            {
-        if ((dataGridViewSave.Rows[i].Cells[1].Value.ToString() == textBoxFIO.Text)  
-                    || ((dataGridViewSave.Rows[i].Cells[2].Value.ToString() == textBoxNapravlenie.Text)    || ((dataGridViewSave.Rows[i].Cells[3].Value.ToString() == textBoxNumber.Text) && (dataGridViewSave.Rows[i].Cells[2].Value.ToString() != null))
-         || (dataGridViewSave.Rows[i].Cells[4].Value.ToString() == textBoxKurs.Text) ))
+        if ((dataGridViewSave.Rows[i].Cells[0].Value.ToString() == textBoxFIO.Text)  
+                    || ((dataGridViewSave.Rows[i].Cells[1].Value.ToString() == textBoxNapravlenie.Text)    || ((dataGridViewSave.Rows[i].Cells[2].Value.ToString() == textBoxNumber.Text) && (dataGridViewSave.Rows[i].Cells[2].Value.ToString() != null))
+         || (dataGridViewSave.Rows[i].Cells[3].Value.ToString() == textBoxKurs.Text) ))
         {
 
                  dataGridViewSave.Rows.RemoveAt(i);
@@ -200,7 +220,7 @@ MessageBoxIcon.Error);
             items[z] = dataGridView.Rows[i].Cells[z].Value;
           }
 
-          dataGridViewSave.Rows.Add(new object[] { "", items[1], items[2], items[3], items[4] });
+          dataGridViewSave.Rows.Add(new object[] {  items[1], items[2], items[3], items[4] });
 
         }
       }
