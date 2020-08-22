@@ -56,7 +56,7 @@
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(112, 26);
             this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "Save";
+            this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
@@ -66,7 +66,7 @@
             this.buttonCansel.Name = "buttonCansel";
             this.buttonCansel.Size = new System.Drawing.Size(112, 26);
             this.buttonCansel.TabIndex = 3;
-            this.buttonCansel.Text = "Cansel";
+            this.buttonCansel.Text = "Отмена";
             this.buttonCansel.UseVisualStyleBackColor = true;
             this.buttonCansel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
@@ -100,7 +100,7 @@
             this.Controls.Add(this.textBoxNumber);
             this.Controls.Add(this.textBoxName);
             this.Name = "FormNapravlenie";
-            this.Text = "FormNapravlenie";
+            this.Text = "Направление";
             this.Load += new System.EventHandler(this.FormNapravlenie_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

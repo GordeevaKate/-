@@ -42,7 +42,7 @@
             this.buttonRef.Name = "buttonRef";
             this.buttonRef.Size = new System.Drawing.Size(131, 20);
             this.buttonRef.TabIndex = 7;
-            this.buttonRef.Text = "Ref";
+            this.buttonRef.Text = "Обновить";
             this.buttonRef.UseVisualStyleBackColor = true;
             this.buttonRef.Click += new System.EventHandler(this.buttonRef_Click_1);
             // 
@@ -52,7 +52,7 @@
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(131, 20);
             this.buttonDel.TabIndex = 6;
-            this.buttonDel.Text = "Del";
+            this.buttonDel.Text = "Удалить";
             this.buttonDel.UseVisualStyleBackColor = true;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click_1);
             // 
@@ -62,7 +62,7 @@
             this.buttonUpd.Name = "buttonUpd";
             this.buttonUpd.Size = new System.Drawing.Size(131, 20);
             this.buttonUpd.TabIndex = 5;
-            this.buttonUpd.Text = "Upd";
+            this.buttonUpd.Text = "Изменить";
             this.buttonUpd.UseVisualStyleBackColor = true;
             this.buttonUpd.Click += new System.EventHandler(this.buttonUpd_Click_1);
             // 
@@ -72,7 +72,7 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(131, 20);
             this.buttonAdd.TabIndex = 4;
-            this.buttonAdd.Text = "Add";
+            this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.buttonUpd);
             this.Controls.Add(this.buttonAdd);
             this.Name = "FormStudents";
-            this.Text = "FormStudents";
+            this.Text = "Студенты";
             this.Load += new System.EventHandler(this.FormStudents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

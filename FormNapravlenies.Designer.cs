@@ -42,7 +42,7 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(131, 19);
             this.buttonAdd.TabIndex = 0;
-            this.buttonAdd.Text = "Add";
+            this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -52,7 +52,7 @@
             this.buttonUpd.Name = "buttonUpd";
             this.buttonUpd.Size = new System.Drawing.Size(131, 19);
             this.buttonUpd.TabIndex = 1;
-            this.buttonUpd.Text = "Upd";
+            this.buttonUpd.Text = "Изменить";
             this.buttonUpd.UseVisualStyleBackColor = true;
             this.buttonUpd.Click += new System.EventHandler(this.buttonUpd_Click);
             // 
@@ -62,7 +62,7 @@
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(131, 19);
             this.buttonDel.TabIndex = 2;
-            this.buttonDel.Text = "Del";
+            this.buttonDel.Text = "Удалить";
             this.buttonDel.UseVisualStyleBackColor = true;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
@@ -72,7 +72,7 @@
             this.buttonRef.Name = "buttonRef";
             this.buttonRef.Size = new System.Drawing.Size(131, 19);
             this.buttonRef.TabIndex = 3;
-            this.buttonRef.Text = "Ref";
+            this.buttonRef.Text = "Обновить";
             this.buttonRef.UseVisualStyleBackColor = true;
             this.buttonRef.Click += new System.EventHandler(this.buttonRef_Click);
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.buttonUpd);
             this.Controls.Add(this.buttonAdd);
             this.Name = "FormNapravlenies";
-            this.Text = "FormNapravlenies";
+            this.Text = "Направления";
             this.Load += new System.EventHandler(this.FormSeafoods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

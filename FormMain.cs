@@ -32,5 +32,11 @@ namespace Практика
             var form = Container.Resolve<FormStudents>();
             form.ShowDialog();
         }
+
+        private void отчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormReport>();
+            form.ShowDialog();
+        }
     }
 }
